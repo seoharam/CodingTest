@@ -1,6 +1,6 @@
 """
 0. 개념
-- BFS (Breadth-Frist Search): 그래프 탐색 (Vertex + Edge) -> 한 계층씩 다 훑고 더 깊은 계층 탐색
+- BFS (Breadth-Frist Search): 그래프 탐색 (Vertex + Edge) -> 한 계층씩 다 훑고 더 깊은 계층 탐색 / 보통 최소 거리 찾을 때 많이 씀 > A* > Dijkstra
 - Queue 자료형 = FIFO(First-In-First-Out): 먼저 들어간게 먼저 나오는 구조 (= 줄서기)
 
 * list로 표현하든 numpy로 표현하든 둘 다 행렬(matrix)는 맞고, 보통 numpmy는 격자 전체에 수학 연산을 걸 때 유용해서 굳이 지금은 쓸 필요 X
