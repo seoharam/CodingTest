@@ -4,6 +4,7 @@
 - Stack 자료형 = LIFO(Last-In-First-Out): 먼저 들어간게 나중에 나오는 구조
 - 재귀 함수 (Recursive): 자기 자신을 다시 호출하는 함수 / 회귀 분석 (Regression): 변수들 간의 관계를 함수 형태로 추정
    ㄴ 종료되는 시점이 반드시 명시, 재귀 함수의 깊이가 너무 깊어지면 Stack Overflow -> 재귀 함수 호출할 때마다 호출 정보가 call stack에 쌓이는데, 이게 계속해서 쌓이고 공간이 없어지면 Stack Overflow라고 함 (일반적으로 파이썬에서는 1000번 정도로 설정)
+   ㄴ Thread: 하나의 프로세스 안에서 실행되는 흐름의 단위 -> 이 안에 call stack이 쌓임
    ㄴ Backtracking에서도 주로 사용: 재귀로 가능한 경우를 탐색하다가 안되면 되돌아가는 기법
 
 1. 아이디어
@@ -25,7 +26,7 @@ import sys
 input = sys.stdin.readline                                           # 시스템 도구 모음 -> 표준 입력 -> 한 줄을 읽는다 (입력속도 개선)
 
 N = int(input())                                                     # 정사각형 격자의 한 변 크기 N 입력
-map = [list(map(int, input().strip())) for _ in range(N)]            # strip을 통해 줄바꿈 문자열도 제거 후, 공백 없이 붙어있는 숫자 문자열을 한 글자씩 리스트로 쪼개 int로 변환 -> N x N 격자 생성
+map = [list(map(int, input().strip())) for _ in range(N)]            # strip을 통해 줄바꿈 문자열도 제거 후, 공백 없이 붙어있는 숫자 문자열을 한 글자씩 리스트로 쪼개 int로 변환 / split은 알아서 제거해주고 공백을 기준으로 분할
                                                                      # 주의: 이 줄 실행 후 'map'은 파이썬 내장 함수가 아니라 이 2차원 리스트를 가리키게 됨(이름 겹침)
 chk = [[False] * N for _ in range(N)]                                # 방문 여부를 저장할 N x N 배열, 전부 False로 초기화
 result = []                                                          # 각 덩어리(그림)의 크기를 담을 리스트
